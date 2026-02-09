@@ -1,52 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>Indian Talent Olympiad – Result</title>
-
+  <title>Indian Talent Olympiad</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- ================= SEO / PREVIEW ================= -->
+  <meta property="og:title" content="Indian Talent Olympiad – Result" />
+  <meta property="og:description" content="Check your Olympiad result." />
+  <meta property="og:image" content="https://deeplink-backend-5yud.vercel.app/ito-preview.jpg" />
 
-  <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Indian Talent Olympiad – Round 1 Result 2025–26" />
-  <meta property="og:description" content="Check your Olympiad exam result instantly using your Roll Number." />
-  <meta property="og:image" content="https://deeplink-backend.vercel.app/ito-preview.jpg" />
-  <meta property="og:url" content="https://deeplink-backend.vercel.app" />
-
-  <!-- Required image dimensions -->
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Indian Talent Olympiad – Result" />
-  <meta name="twitter:description" content="View Round 1 Olympiad Result 2025–26 using Roll Number." />
-  <meta name="twitter:image" content="https://deeplink-backend.vercel.app/ito-preview.jpg" />
-
-  <!-- ================= HARD FALLBACK ================= -->
   <script>
     (function () {
-      const ua = navigator.userAgent.toLowerCase();
+      const now = Date.now();
 
-      function go(url) {
-        setTimeout(() => {
-          window.location.href = url;
-        }, 500);
+      function openApp() {
+        window.location = "https://deeplink-backend-5yud.vercel.app?src=public_result";
       }
 
-      if (ua.includes('android')) {
-        go('https://play.google.com/store/apps/details?id=com.ito.onlineexam.app');
-        return;
+      function fallback() {
+        const ua = navigator.userAgent.toLowerCase();
+
+        if (ua.includes('android')) {
+          window.location.href =
+            "https://play.google.com/store/apps/details?id=com.ito.onlineexam.app";
+        } else if (ua.includes('iphone') || ua.includes('ipad')) {
+          window.location.href =
+            "https://apps.apple.com/in/app/ito-indian-talent-olympiad/id6443736601";
+        }
       }
 
-      if (ua.includes('iphone') || ua.includes('ipad')) {
-        go('https://apps.apple.com/in/app/ito-indian-talent-olympiad/id6443736601');
-        return;
-      }
-
-      document.body.innerHTML =
-        '<h3>Open this link on a mobile device</h3>';
+      openApp();
+      setTimeout(fallback, 1500);
     })();
   </script>
 </head>
