@@ -1,0 +1,11 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.ito.onlineexam.app",
+      "sha256_cert_fingerprints":
+        ["6A:FA:59:0B:02:C6:56:30:67:91:59:C4:C3:DC:89:FA:A1:7E:41:40:4C:53:F7:DC:90:83:31:87:52:42:F6:54", "17:65:10:6D:90:22:E6:CC:7F:EB:02:31:2F:09:46:76:9D:C6:22:D8:B6:28:1D:35:4E:46:C1:CD:45:CD:01:34"]
+    }
+  }
+]
