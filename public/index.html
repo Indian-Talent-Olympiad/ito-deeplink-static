@@ -35,9 +35,9 @@
     function installApp() {
       const ua = navigator.userAgent.toLowerCase();
       if (ua.includes('android')) {
-        window.location.href =
-          "https://play.google.com/store/apps/details?id=com.ito.onlineexam.app";
-      } else if (ua.includes('iphone') || ua.includes('ipad')) {
+    window.location.href =
+      "intent://public-result#Intent;scheme=indiantalentolympiad;package=com.ito.onlineexam.app;end";
+  }  else if (ua.includes('iphone') || ua.includes('ipad')) {
         window.location.href =
           "https://apps.apple.com/in/app/ito-indian-talent-olympiad/id6443736601";
       }
