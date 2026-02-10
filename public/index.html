@@ -4,20 +4,16 @@
   <title>Indian Talent Olympiad</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta property="og:title" content="Indian Talent Olympiad– Student Result" />
+  <meta property="og:title" content="Indian Talent Olympiad – Student Result" />
   <meta property="og:description" content="Check your Olympiad result." />
   <meta property="og:image" content="https://deeplink-backend-5yud.vercel.app/ito-preview.jpg" />
 
   <script>
     (function () {
-      const now = Date.now();
+      const ua = navigator.userAgent.toLowerCase();
 
-      function openApp() {
-        window.location = "https://deeplink-backend-5yud.vercel.app?src=public_result";
-      }
-
-      function fallback() {
-        const ua = navigator.userAgent.toLowerCase();
+      // Wait so OS can open the app first
+      setTimeout(function () {
 
         if (ua.includes('android')) {
           window.location.href =
@@ -26,12 +22,14 @@
           window.location.href =
             "https://apps.apple.com/in/app/ito-indian-talent-olympiad/id6443736601";
         }
-      }
 
-      openApp();
-      setTimeout(fallback, 1500);
+      }, 2000);
     })();
   </script>
 </head>
-<body></body>
+<body>
+  <h3 style="text-align:center;margin-top:40px;">
+    Opening Indian Talent Olympiad...
+  </h3>
+</body>
 </html>
