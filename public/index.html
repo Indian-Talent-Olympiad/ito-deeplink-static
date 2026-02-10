@@ -1,49 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Indian Talent Olympiad</title>
+  <title>Indian Talent Olympiad – Result</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta property="og:title" content="Indian Talent Olympiad – Student Result" />
-  <meta property="og:description" content="Check your Olympiad result." />
+  <!-- Preview -->
+  <meta property="og:title" content="Indian Talent Olympiad – Result" />
+  <meta property="og:description" content="Check your Olympiad result instantly." />
   <meta property="og:image" content="https://deeplink-backend-5yud.vercel.app/ito-preview.jpg" />
 
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      padding: 40px;
+    }
+    button {
+      width: 80%;
+      padding: 14px;
+      margin: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+    }
+    .open { background: #2D3E75; color: white; }
+    .install { background: #28a745; color: white; }
+  </style>
+
   <script>
-(function () {
-  const ua = navigator.userAgent.toLowerCase();
-  const start = Date.now();
-
-  document.addEventListener("visibilitychange", function () {
-    // If page hidden → app probably opened
-    window.__appOpened = true;
-  });
-
-  setTimeout(function () {
-
-    // If app opened, do nothing
-    if (window.__appOpened) return;
-
-    // Otherwise fallback to store
-    if (ua.includes('android')) {
-      window.location.href =
-        "https://play.google.com/store/apps/details?id=com.ito.onlineexam.app";
-    } else if (ua.includes('iphone') || ua.includes('ipad')) {
-      window.location.href =
-        "https://apps.apple.com/in/app/ito-indian-talent-olympiad/id6443736601";
+    function openApp() {
+      window.location.href = "indiantalentolympiad://public-result";
     }
 
-  }, 2000);
-})();
-</script>
+    function installApp() {
+      const ua = navigator.userAgent.toLowerCase();
+      if (ua.includes('android')) {
+        window.location.href =
+          "https://play.google.com/store/apps/details?id=com.ito.onlineexam.app";
+      } else if (ua.includes('iphone') || ua.includes('ipad')) {
+        window.location.href =
+          "https://apps.apple.com/in/app/ito-indian-talent-olympiad/id6443736601";
+      }
+    }
 
+    // Auto try once
+    window.onload = function () {
+      setTimeout(openApp, 500);
+    };
+  </script>
 </head>
+
 <body>
-  <h3>Opening Indian Talent Olympiad...</h3>
+  <h2>Indian Talent Olympiad</h2>
+  <p>View your Olympiad Result</p>
 
-  <a href="indiantalentolympiad://public-result"
-     style="display:block;margin-top:20px;font-size:18px;">
-     Open in App
-  </a>
+  <button class="open" onclick="openApp()">Open in App</button>
+  <button class="install" onclick="installApp()">Install App</button>
 </body>
-
 </html>
