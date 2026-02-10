@@ -3,8 +3,8 @@
     "apps": [],
     "details": [
       {
-        "appID": "MC787NJFVP.com.ito.onlineexam.app",
-        "paths": ["*"]
+        "appID": "MC787NJFVP.com.ito.onlineexam.app", 
+        "paths": ["*"] 
       }
     ]
   }
